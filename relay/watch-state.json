@@ -3,7 +3,7 @@
   "_owner": "Claude Command",
   "_scheduled_task": "SCINTILLA Relay Watch — Drive card ingest (hourly at :29 UTC)",
   "_created_utc": "2026-08-01T21:29:00Z",
-  "last_scan_utc": "2026-08-01T21:29:00Z",
+  "last_scan_utc": "2026-08-01T22:30:04Z",
   "seen_ids": [
     "11ZG0GpzjHidYADy0l74q-qZ4gONDf9ORMbpRQIxmyZA",
     "1O9I5p-AJ8sXHmHl2mLF5PPiV3VcNvIdn477LCLJ2VQo",
@@ -16,9 +16,33 @@
     "18eaYnBL1kcI66UurjYWvykxKqh88lxRd6NxxaoaLcrg",
     "16Y3pPl9jlqyybmdRsPkNXr7uy9B2R6N4PYtY3QOdiFc",
     "1YPMgsM_GHRN_9AfmkJqodmo-XSuFXuLKvzqTR4wr7No",
-    "1-KYOuM9mDrQTBAtaKCmL2Rbcm_LF-0KYraF48IBJYo8"
+    "1-KYOuM9mDrQTBAtaKCmL2Rbcm_LF-0KYraF48IBJYo8",
+    "1YRrWaTUHQfywKE_5q9k8ScHxl16yG2QnGWIMO_zNFnM",
+    "1VPF8Fn2HowWb6zJkO59eh1KGLMI939nZUwnhLpioxsk",
+    "1eB6UpRse2XreYzEFDDjlSHiTb8cuGPNHiqyjt0iskBM",
+    "1uvFH5CqzCJl-8crVn8mo0CetJn1RbMAoyOEI7lENi5M",
+    "1o5Fqef-C8MAGkP7-O9zY7DR52-YT-fECNIFHcOXzCEE",
+    "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU"
   ],
-  "_seen_ids_note": "Authority and order documents already ingested by Claude Command before the watcher went live. Cap the list at the 500 most recent entries.",
+  "_seen_ids_note": "First 12 = authority and order documents ingested by Claude Command before the watcher went live. Entries 13-15 = cards CC-260801-009 / -008 / -007, routed in receipt RELAY-20260801-2230. Entry 16 = Live Work Register (material but no watched title prefix; recorded so it does not resurface). Entry 17 = a non-command personal document, ignored. Entry 18 = this watcher's own receipt Doc, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries.",
+  "_run_log": [
+    {
+      "run_utc": "2026-08-01T22:30:04Z",
+      "window_from": "2026-08-01T21:29:00Z",
+      "candidates_returned": 5,
+      "routed": 3,
+      "ignored": 2,
+      "receipt_doc_id": "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU",
+      "receipt_title": "CARD RELAY-20260801-2230 · Relay watch receipt",
+      "most_urgent": "W-002 — Alan must rule on the chg_pct reference-close definition (last official daily close vs last regular-session close). The P0.1 production fix is correctly blocked until he answers.",
+      "prohibitions_observed": "No TradingView tool called. No Supabase write, no deploy, no merge, no push to any other repo, no Drive edit or delete. No credential value read or printed.",
+      "writes": [
+        "Google Doc 1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU (receipt)",
+        "relay/watch-state.json (this file)"
+      ]
+    }
+  ],
+  "_open_rule_gap": "The Live Work Register (1uvFH5Cq...) is material but its title matches none of the watched prefixes (ACTIVE, CARD, HQ RETURN, DIRECTIVE, RELAY, SPRINT, INCIDENT, STAGED, SITREP). If it should be watched for changes it needs a watched prefix or an explicit rule. Flagged in receipt RELAY-20260801-2230; decision belongs to Claude Command.",
   "_prohibitions": [
     "No TradingView MCP calls of any kind — TVMCP-260801-001 is open and the tooling is quarantined.",
     "No Supabase writes, no deployments, no merges, no pushes to other repos, no Drive edits or deletions.",
