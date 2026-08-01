@@ -1,0 +1,27 @@
+{
+  "_purpose": "Durable, idempotent state for the SCINTILLA Relay Watch scheduled task. Read at the start of every run, written back at the end. Chosen because the Google Drive connector can create and read documents but cannot edit them, so Drive cannot hold mutable state.",
+  "_owner": "Claude Command",
+  "_scheduled_task": "SCINTILLA Relay Watch — Drive card ingest (hourly at :29 UTC)",
+  "_created_utc": "2026-08-01T21:29:00Z",
+  "last_scan_utc": "2026-08-01T21:29:00Z",
+  "seen_ids": [
+    "11ZG0GpzjHidYADy0l74q-qZ4gONDf9ORMbpRQIxmyZA",
+    "1O9I5p-AJ8sXHmHl2mLF5PPiV3VcNvIdn477LCLJ2VQo",
+    "1_B7tWj9FftMq51I1FcFVRoKjL76fMzUIrZf6MH_p9GM",
+    "1kJ0xxQa5dvj1HywDMrUVqnujOfbtFJsAGVSiqWYcUH8",
+    "10HQsuBKnGbvnB23jUsyF1WK4ccV7XIw_a1WyD42lFcM",
+    "1N-oG6hPOcffI9GfoRb3wdjLsw30wEHV0ydsUNxA28Hk",
+    "1m3wORo40v84L2y7RNZnNuQHHOefDaB1K9eQWNPTvff8",
+    "1CdZBH5zcRwEgtUAjYVWe1w3w8bjrTp-U1msI3bYOr_E",
+    "18eaYnBL1kcI66UurjYWvykxKqh88lxRd6NxxaoaLcrg",
+    "16Y3pPl9jlqyybmdRsPkNXr7uy9B2R6N4PYtY3QOdiFc",
+    "1YPMgsM_GHRN_9AfmkJqodmo-XSuFXuLKvzqTR4wr7No",
+    "1-KYOuM9mDrQTBAtaKCmL2Rbcm_LF-0KYraF48IBJYo8"
+  ],
+  "_seen_ids_note": "Authority and order documents already ingested by Claude Command before the watcher went live. Cap the list at the 500 most recent entries.",
+  "_prohibitions": [
+    "No TradingView MCP calls of any kind — TVMCP-260801-001 is open and the tooling is quarantined.",
+    "No Supabase writes, no deployments, no merges, no pushes to other repos, no Drive edits or deletions.",
+    "Never print or log a credential value."
+  ]
+}
