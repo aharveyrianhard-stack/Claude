@@ -3,8 +3,8 @@
   "_owner": "Claude Command",
   "_scheduled_task": "SCINTILLA Relay Watch — Drive card ingest (hourly at :29 UTC)",
   "_created_utc": "2026-08-01T21:29:00Z",
-  "last_scan_utc": "2026-08-02T05:56:35Z",
-  "_last_scan_note": "Monotonic pointer. Never roll this value backwards. ADVANCED normally by the 0556 run: the three-card backlog held by the 0229 run has been routed, so there is nothing left to protect behind the old pointer.",
+  "last_scan_utc": "2026-08-02T06:30:06Z",
+  "_last_scan_note": "Monotonic pointer. Never roll this value backwards. ADVANCED normally by the 0630 run: both candidates in the window were routed, no backlog held.",
   "seen_ids": [
     "11ZG0GpzjHidYADy0l74q-qZ4gONDf9ORMbpRQIxmyZA",
     "1O9I5p-AJ8sXHmHl2mLF5PPiV3VcNvIdn477LCLJ2VQo",
@@ -46,10 +46,13 @@
     "1KvrzFPO_QLvtkvXyy4PQG0ORQae4HTay2zSQ8DKlRAU",
     "14RVjWLfyEmklCU7c4t5EFzWifuuK9fqjo-luzkEnEm8",
     "17Ioza9fB4U84dAmN4FletNjpczQ9PHL0VK0J2Tdfln0",
-    "15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg"
+    "15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg",
+    "1v_i7SrA-oACjZNJh5xmdx46Yjml7FM4tEyt6OpTksnQ",
+    "1EbLdV8PaR7Ec9RuvNN06MROChsP563KlbxJcOuSOCh0",
+    "1u-LC3vTqVfYSJAXBvah4bOTs7kh1IG27bAdC600MCas"
   ],
-  "_seen_ids_note": "Entries 1-12 = authority and order documents ingested by Claude Command before the watcher went live. 13-15 = cards CC-260801-009 / -008 / -007. 16 = Live Work Register v1. 17, 19-21 = non-command personal documents, ignored. 18 = the 2230 receipt Doc. 22 = folder 'AIOS — Command Exchange'. 23 = DUPLICATE receipt RELAY-20260801-2330. 24-28 = the five documents routed by the 0330 run. 29 = folder 'SCINTILLA–Urth Transfer — Deliverables'. 30 = the 0330 receipt Doc. 31 = DUPLICATE receipt RELAY-20260802-0229. 32-40 = the nine documents routed by the 0556 run (32-34 are the former backlog). 41 = the 0556 receipt Doc, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries; currently 41.",
-  "_run_log_note": "Older run entries (2230, 2330, 0030, 0130, 0330, 0229) are preserved in git history of this file at commit 031232ea. Retained below: the two duplicate-run records that document the still-open CONCURRENCY defect, plus the current run.",
+  "_seen_ids_note": "Entries 1-12 = authority and order documents ingested by Claude Command before the watcher went live. 13-15 = cards CC-260801-009 / -008 / -007. 16 = Live Work Register v1. 17, 19-21 = non-command personal documents, ignored. 18 = the 2230 receipt Doc. 22 = folder 'AIOS — Command Exchange'. 23 = DUPLICATE receipt RELAY-20260801-2330. 24-28 = the five documents routed by the 0330 run. 29 = folder 'SCINTILLA–Urth Transfer — Deliverables'. 30 = the 0330 receipt Doc. 31 = DUPLICATE receipt RELAY-20260802-0229. 32-40 = the nine documents routed by the 0556 run. 41 = the 0556 receipt Doc. 42-43 = the two documents routed by the 0630 run (SCMD-260802-001 and the AlanOS Operator Board v0.1). 44 = the 0630 receipt Doc, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries; currently 44.",
+  "_run_log_note": "Older run entries (2230, 2330, 0030, 0130, 0330, 0229) are preserved in git history of this file at commit 031232ea. Retained below: the two duplicate-run records that document the still-open CONCURRENCY defect, plus the two most recent runs.",
   "_run_log": [
     {
       "run_utc": "2026-08-01T23:30:10Z",
@@ -73,33 +76,37 @@
       "routed": 9,
       "ignored": 2,
       "receipt_doc_id": "15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg",
-      "receipt_title": "CARD RELAY-20260802-0556 · Relay watch receipt",
+      "backlog_cleared": true,
+      "most_urgent": "Codex byte-inspection (CODEX-TV-260802-001) plus RETURN REVIEW TVMCP-260801-002-R1: MacBook TradingView MCP source still carries destructive default kill_existing behaviour and matches neither iMac HEAD nor the claimed repair; every implementation artifact missing from the iMac repair package. Both devices quarantined."
+    },
+    {
+      "run_utc": "2026-08-02T06:30:06Z",
+      "window_from": "2026-08-02T05:56:35Z",
+      "candidates_returned": 3,
+      "routed": 2,
+      "ignored": 1,
+      "receipt_doc_id": "1u-LC3vTqVfYSJAXBvah4bOTs7kh1IG27bAdC600MCas",
+      "receipt_title": "CARD RELAY-20260802-0630 · Relay watch receipt",
       "receipt_location": "My Drive root, per the standing watcher order. [OPEN] The newer operator DRIVE RULE names the exchange folder; the conflict is unresolved and owned by Claude Command.",
+      "concurrency_check": "CLEAN — prior write 05:56:35Z, this run started 06:30:06Z, no overlap observed.",
       "backlog_cleared": true,
       "routed_items": [
-        "16AbwfAy... · ACTIVE COMMAND CARD [IMAC-SCINTILLA-260801-001] · ORDER · rotation + live engine + TradingView + relay (was backlog)",
-        "1EDhtfkT... · INCIDENT UPDATE [TVMCP-260801-003] · INCIDENT · TradingView (was backlog)",
-        "1d8LHJqN... · TECHNICAL DECISION [DB-260801-001] · ORDER/DECISION · calculation validation + live engine (was backlog)",
-        "11XBeeZO... · SPEC-DB-001 · OBSERVATION (staged package, NOT APPLIED)",
-        "17Ioza9f... · CARD CODEX-TV-260802-001 · SITREP · TradingView",
-        "14RVjWLf... · RETURN REVIEW [TVMCP-260801-002-R1] · INCIDENT/REVIEW REJECTION · TradingView",
-        "178ZFawe... · CARD CC-260802-001 · SITREP · TradingView + relay",
-        "131dZgmT... · CARD CC-260802-002 · SITREP · relay + cost/PRs + allocation",
-        "1KvrzFPO... · LIVE WORK REGISTER v2 · OBSERVATION · all lanes"
+        "1v_i7SrA... · SCINTILLA COMMAND CARD [SCMD-260802-001] — Command SITREP and First Sprint · ORDER (8-item sprint) + SITREP · lanes: live engine, rulebook, loop, calculation validation, TradingView, relay, fundamentals/DCF, rotation, allocation, tiered-order, Urth. RULING: browser-controlled TradingView is now the PRIMARY Pine workflow; legacy MCP demoted to a separate quarantined Technical Assurance lane (quarantine NOT lifted, TVMCP-260801-001 still open). Confirmed Pivot Zones v0.1 exists, PZ-001..PZ-012 open. Two design conflicts formally preserved (nine-rung calibrated gradient vs MIDAS ladder; monochrome Pivot Zones vs indicator-family hue). Claude Command owns sprint items #3 (chg_pct ownership, price-only writer staging, tf='1' classification, caller map/tests/rollback, NO production write) and #5 (broad-first schema + first populated evidence package).",
+        "1EbLdV8P... · ACTIVE BOARD — AlanOS Operator Board v0.1 (Google Sheet, in AIOS — Command Exchange) · ORDER + registry · all lanes. Establishes Queue (Q-0xx/Q-9xx), Session & Role Register (SES-001..SES-015, Claude Command = SES-002), Receipt Register (R-001..R-016 with two declared gaps R-007 and R-008), bounded NEEDS FROM ALAN (A-001..A-010, three Open: A-001 board validation, A-003 signed-in TradingView for inventory, A-005 capital/order approval), and Operator Inbox policies IN-003 reversible-default rule, IN-004 continuity outside the LLM + receipt on every material return, IN-006 screenshot-only Finder inventory. Records private repo aharveyrianhard-stack/tradingview-mcp (baseline baa3af60, repaired 8f0ccc5, tag v2.0.0) as R-002."
       ],
       "ignored_items": [
-        "1HV6tC9s... (own 0330 receipt)",
-        "1Hmk1MHa... (duplicate 0229 receipt)"
+        "15FO5-DM... (own 0556 receipt)"
       ],
-      "most_urgent": "[DIRECT-SYSTEM] Codex byte-inspection (CODEX-TV-260802-001) confirms the MacBook TradingView MCP source still carries the destructive default kill_existing-when-omitted plus pattern-based TradingView termination in four scripts, and its connection.js matches neither iMac HEAD nor the claimed repair, in a directory that is not a git repo. Concurrently RETURN REVIEW TVMCP-260801-002-R1 finds every implementation artifact missing from the iMac repair package, so nothing can be verified, ported or rolled back. Both devices quarantined; TVMCP-260801-001 open. Unblocker: one complete archive TVMCP-260801-002_iMAC_REPAIR_PACKAGE_v2_COMPLETE.zip into SCINTILLA–Urth Transfer — Deliverables.",
-      "prohibitions_observed": "No TradingView MCP tool called of any kind — quarantine honoured while reading three TradingView documents. No Supabase read or write. No deploy. No merge, no push to any repo other than this state file. No Drive edit or deletion. No credential, key, token or secret value read, printed or logged — referred to by name only.",
+      "most_urgent": "[OPERATOR-STATED, cross-confirmed by both new documents] Codex Technical Assurance remains blocked: 34 of the 41 iMac TradingView-MCP files exist ONLY as a conversation attachment — no Drive copy, no repo copy — while SES-006 (the iMac Claude session most likely holding that material) is recorded on the new board as 'active but compacting'. Live risk of permanent evidence loss, and the single dependency blocking hash verification, cross-device comparison, canonical patching and any safe exit from the TradingView quarantine. Unblocker unchanged: one complete archive TVMCP-260801-002_iMAC_REPAIR_PACKAGE_v2_COMPLETE.zip into 'SCINTILLA–Urth Transfer — Deliverables'.",
+      "new_obligation_on_claude_command": "The Operator Board is now the external registry of record. Claude Command should register as SES-002, map its open items (SPEC-DB-001 staged/NOT APPLIED, TVMCP-260801-001, this concurrency defect, the three watcher rule gaps) onto Q- and R- IDs, and file a receipt row for every material return. Board queue items Q-026 receipt protocol, Q-027 session lifecycle and Q-029 operator board + intake are Critical and Not started.",
+      "prohibitions_observed": "No TradingView MCP tool called of any kind — quarantine honoured while reading two TradingView-heavy documents. No Supabase read or write. No deploy. No merge, no push to any repo other than this state file. No Drive edit or deletion. No credential, key, token or secret value read, printed or logged — referred to by name only.",
       "writes": [
-        "Google Doc 15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg (receipt)",
+        "Google Doc 1u-LC3vTqVfYSJAXBvah4bOTs7kh1IG27bAdC600MCas (receipt)",
         "relay/watch-state.json (this file)"
       ]
     }
   ],
-  "_open_rule_gap": "Three gaps, all owned by Claude Command. (1) The title-prefix watch rule misses material documents carrying no watched prefix — DECISION CARD, SPEC-*, TECHNICAL DECISION, RETURN REVIEW, LIVE WORK REGISTER. The 0556 run again had to route by folder and content rather than prefix. Recommended replacement: watch ANY document inside AIOS — Command Exchange (1Czqg6O_...) plus the prefix list elsewhere. (2) CONCURRENCY, twice-realised, mitigation still not applied; also verify the scheduled task's actual firing pattern. (3) Receipt location ambiguous — standing order says My Drive root, newer DRIVE RULE says the exchange folder. Housekeeping outstanding: duplicate receipt Docs 1be0L_rG... and 1Hmk1MHa... should be archived by Claude Command or Alan, and LIVE WORK REGISTER v1 (16Y3pPl9...) is superseded by v2; the watcher may not edit or delete Drive files. Backlog: NONE — cleared at 0556Z.",
+  "_open_rule_gap": "Three gaps, all owned by Claude Command. (1) The title-prefix watch rule keeps missing material documents — this run, SCMD-260802-001 carries no watched prefix and the Operator Board is a SPREADSHEET, not a Doc. Recommended replacement stands: watch ANY file (any mimeType) inside AIOS — Command Exchange (1Czqg6O_...) plus the prefix list elsewhere, and do not filter on Docs alone. (2) CONCURRENCY, twice realised, mitigation still not applied; this run was clean but that is luck, not a fix. (3) Receipt location ambiguous — standing order says My Drive root, newer DRIVE RULE says the exchange folder; the new Operator Board reinforces the exchange folder as the shared surface, which strengthens the case for moving. Housekeeping outstanding: duplicate receipt Docs 1be0L_rG... and 1Hmk1MHa... should be archived by Claude Command or Alan, and LIVE WORK REGISTER v1 (16Y3pPl9...) is superseded by v2; the watcher may not edit or delete Drive files. Backlog: NONE — cleared at 0630Z.",
   "_prohibitions": [
     "No TradingView MCP calls of any kind — TVMCP-260801-001 is open and the tooling is quarantined.",
     "No Supabase writes, no deployments, no merges, no pushes to other repos, no Drive edits or deletions.",
