@@ -3,8 +3,8 @@
   "_owner": "Claude Command",
   "_scheduled_task": "SCINTILLA Relay Watch — Drive card ingest (hourly at :29 UTC)",
   "_created_utc": "2026-08-01T21:29:00Z",
-  "last_scan_utc": "2026-08-02T03:30:10Z",
-  "_last_scan_note": "Monotonic pointer. Never roll this value backwards. HELD DELIBERATELY at the 0330 run's value by the 0229 duplicate run: three material documents created at 03:32-03:33Z are still UNROUTED, and advancing the pointer would have hidden them permanently. The next run's window must start at 03:30:10Z.",
+  "last_scan_utc": "2026-08-02T05:56:35Z",
+  "_last_scan_note": "Monotonic pointer. Never roll this value backwards. ADVANCED normally by the 0556 run: the three-card backlog held by the 0229 run has been routed, so there is nothing left to protect behind the old pointer.",
   "seen_ids": [
     "11ZG0GpzjHidYADy0l74q-qZ4gONDf9ORMbpRQIxmyZA",
     "1O9I5p-AJ8sXHmHl2mLF5PPiV3VcNvIdn477LCLJ2VQo",
@@ -36,124 +36,70 @@
     "1CEhfTElmUmlvzvqXsSCQYBf8QHCxybRwTyl5eceFHVQ",
     "1s8fxbg_l75AQRys661iuR87TaiIp43qZ",
     "1HV6tC9swucikCWf0ES2wQN1yAudXKGJmvqeSqlqgTvE",
-    "1Hmk1MHaLC88sdLmj9-womeCHiPMr1fzFterGalhtzNA"
+    "1Hmk1MHaLC88sdLmj9-womeCHiPMr1fzFterGalhtzNA",
+    "16AbwfAy7JLAazQ0gLAvNsgc90PL1VqO0qu_pzKsNbWs",
+    "1EDhtfkTKxJ8zzKazu1guVCn2n5DMzxjjP14JX3fjBYY",
+    "1d8LHJqNTAWC6snpeCsbMk6macRPYBYBuCLo0fmcIMLk",
+    "11XBeeZO2Z5WKTbmgF9c77AkxMBdVJSAIiKIOdmDI5TI",
+    "178ZFawe129oVtn4ao8JYXxt5iCA_q6eelYvVWvh2jzo",
+    "131dZgmTvDHFDn4ows2zJssDBCDGzI0u2fdm3wvp2PBA",
+    "1KvrzFPO_QLvtkvXyy4PQG0ORQae4HTay2zSQ8DKlRAU",
+    "14RVjWLfyEmklCU7c4t5EFzWifuuK9fqjo-luzkEnEm8",
+    "17Ioza9fB4U84dAmN4FletNjpczQ9PHL0VK0J2Tdfln0",
+    "15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg"
   ],
-  "_seen_ids_note": "First 12 = authority and order documents ingested by Claude Command before the watcher went live. Entries 13-15 = cards CC-260801-009 / -008 / -007, routed in receipt RELAY-20260801-2230. Entry 16 = Live Work Register. Entry 17 = a non-command personal document, ignored. Entry 18 = the 2230 receipt Doc. Entries 19-21 = non-command personal documents, ignored. Entry 22 = folder 'AIOS — Command Exchange'. Entry 23 = the DUPLICATE receipt RELAY-20260801-2330. Entries 24-28 = the five material documents routed by the 0330 run. Entry 29 = folder 'SCINTILLA–Urth Transfer — Deliverables'. Entry 30 = the 0330 receipt Doc. Entry 31 = the DUPLICATE receipt RELAY-20260802-0229 (1Hmk1MHa...), recorded so the watcher never routes its own output. NOT added to this list, deliberately: 16AbwfAy... , 1EDhtfkT... and 1d8LHJqN... — three material cards created 03:32-03:33Z that no run has routed yet. Cap the list at the 500 most recent entries.",
+  "_seen_ids_note": "Entries 1-12 = authority and order documents ingested by Claude Command before the watcher went live. 13-15 = cards CC-260801-009 / -008 / -007. 16 = Live Work Register v1. 17, 19-21 = non-command personal documents, ignored. 18 = the 2230 receipt Doc. 22 = folder 'AIOS — Command Exchange'. 23 = DUPLICATE receipt RELAY-20260801-2330. 24-28 = the five documents routed by the 0330 run. 29 = folder 'SCINTILLA–Urth Transfer — Deliverables'. 30 = the 0330 receipt Doc. 31 = DUPLICATE receipt RELAY-20260802-0229. 32-40 = the nine documents routed by the 0556 run (32-34 are the former backlog). 41 = the 0556 receipt Doc, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries; currently 41.",
+  "_run_log_note": "Older run entries (2230, 2330, 0030, 0130, 0330, 0229) are preserved in git history of this file at commit 031232ea. Retained below: the two duplicate-run records that document the still-open CONCURRENCY defect, plus the current run.",
   "_run_log": [
     {
-      "run_utc": "2026-08-01T22:30:04Z",
-      "window_from": "2026-08-01T21:29:00Z",
-      "candidates_returned": 5,
-      "routed": 3,
-      "ignored": 2,
-      "receipt_doc_id": "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU",
-      "receipt_title": "CARD RELAY-20260801-2230 · Relay watch receipt",
-      "most_urgent": "W-002 — Alan must rule on the chg_pct reference-close definition. The P0.1 production fix is correctly blocked until he answers.",
-      "prohibitions_observed": "No TradingView tool called. No Supabase write, no deploy, no merge, no push to any other repo, no Drive edit or delete. No credential value read or printed.",
-      "writes": [
-        "Google Doc 1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU (receipt)",
-        "relay/watch-state.json (this file)"
-      ]
-    },
-    {
       "run_utc": "2026-08-01T23:30:10Z",
-      "recorded_out_of_order_at_utc": "2026-08-02T01:05:00Z",
-      "status": "DUPLICATE — this run read the 21:29:00Z state and never saw the 22:30 run's write",
-      "window_from": "2026-08-01T21:29:00Z",
-      "candidates_returned": 7,
-      "routed": 3,
-      "ignored": 3,
+      "status": "DUPLICATE — read the 21:29:00Z state and never saw the 22:30 run's write",
       "receipt_doc_id": "1be0L_rGhU_6JSspoh2uBH6CdH7eCCB7hYHiDV_ou23E",
-      "receipt_title": "CARD RELAY-20260801-2330 · Relay watch receipt",
-      "duplicate_of": "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU (RELAY-20260801-2230)",
-      "detail": "[DIRECT-SYSTEM] Routed the same three cards the 22:30 run had already routed: CC-260801-009, CC-260801-008, CC-260801-007. Detected the collision only at write time, via a GitHub SHA mismatch.",
-      "defect_opened": "CONCURRENCY: two watcher runs overlapped and the later-starting one held a stale window. Read-then-write on this file is not atomic. Mitigation candidate (NOT applied — belongs to Claude Command): stamp a run-lock field with a run id and start time, and have a run abort if last_scan_utc has advanced past its own window start.",
-      "prohibitions_observed": "No TradingView tool called. No Supabase read or write, no deploy, no merge, no push to any other repo, no Drive edit or delete. No credential value read or printed.",
-      "writes": [
-        "Google Doc 1be0L_rGhU_6JSspoh2uBH6CdH7eCCB7hYHiDV_ou23E (duplicate receipt)",
-        "relay/watch-state.json (this file)"
-      ]
-    },
-    {
-      "run_utc": "2026-08-02T00:30:00Z",
-      "window_from": "2026-08-01T22:30:04Z",
-      "candidates_returned": 6,
-      "routed": 0,
-      "ignored": 6,
-      "receipt_doc_id": null,
-      "no_receipt_reason": "Zero new material command documents in window. Standing rule: create no empty receipt.",
-      "prohibitions_observed": "No TradingView tool called. No Supabase read or write, no deploy, no merge, no push, no Drive create/edit/delete. No credential value read or printed.",
-      "writes": [
-        "relay/watch-state.json (this file) — the run's only write"
-      ]
-    },
-    {
-      "run_utc": "2026-08-02T01:30:00Z",
-      "window_from": "2026-08-02T00:30:00Z",
-      "candidates_returned": 1,
-      "routed": 0,
-      "ignored": 1,
-      "receipt_doc_id": null,
-      "no_receipt_reason": "Zero new material command documents in window. Standing rule: create no empty receipt.",
-      "prohibitions_observed": "No TradingView tool called. No Supabase read or write, no deploy, no merge, no push, no Drive create/edit/delete. No credential value read or printed.",
-      "writes": [
-        "relay/watch-state.json (this file) — the run's only write"
-      ]
-    },
-    {
-      "run_utc": "2026-08-02T03:30:10Z",
-      "window_from": "2026-08-02T01:30:00Z",
-      "note_on_cadence": "[DIRECT-SYSTEM] This run fired at 03:30Z; no 02:30Z run reached the write step. Window carried forward correctly from 01:30:00Z, so no material document was skipped.",
-      "candidates_returned": 7,
-      "routed": 5,
-      "observed_not_routed": 2,
-      "receipt_doc_id": "1HV6tC9swucikCWf0ES2wQN1yAudXKGJmvqeSqlqgTvE",
-      "receipt_title": "CARD RELAY-20260802-0330 · Relay watch receipt",
-      "receipt_location": "AIOS — Command Exchange (1Czqg6O_...), NOT My Drive root. [DECISION] Newer operator DRIVE RULE applied. Reversible.",
-      "routed_items": [
-        "1Wt0X6KeFd8... · DECISION CARD [HQ-260801-001] · ORDER",
-        "1DlXI4Tf... · ACTIVE RELAY CARD [STC-260801-002] · ORDER (to the iMac session)",
-        "1g2B8y3f... · CARD CC-260801-011 · SITREP",
-        "1ih5awk4... · CARD CC-260801-010 · SITREP",
-        "1CEhfTEl... · SPEC-CHG-001 · OBSERVATION (change package, NOT APPLIED)"
-      ],
-      "most_urgent": "[DIRECT-SYSTEM] DECISION CARD HQ-260801-001 abolishes the 'Alan queue' and decides the git-snapshot credential question: Supabase Vault or a function secret, never plaintext in app_config.",
-      "prohibitions_observed": "No TradingView MCP tool called of any kind. No Supabase read or write. No deploy. No merge, no push to any repo other than this state file. No Drive edit or deletion. No credential value read, printed or logged.",
-      "writes": [
-        "Google Doc 1HV6tC9s... (receipt, verified by read-back)",
-        "relay/watch-state.json (this file)"
-      ]
+      "duplicate_of": "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU",
+      "defect_opened": "CONCURRENCY: two watcher runs overlapped and the later-starting one held a stale window. Read-then-write on this file is not atomic."
     },
     {
       "run_utc": "2026-08-02T02:29:44Z",
-      "recorded_out_of_order_at_utc": "2026-08-02T04:05:00Z",
-      "status": "DUPLICATE — SECOND OCCURRENCE OF THE CONCURRENCY DEFECT. This run started at 02:29:44Z holding the 01:30:00Z window, then ran long; by the time it wrote its receipt at 03:57Z the 0330 run had already routed the identical four documents and advanced the pointer to 03:30:10Z.",
-      "window_from": "2026-08-02T01:30:00Z",
-      "candidates_returned": 5,
-      "routed": 4,
-      "ignored": 1,
+      "status": "DUPLICATE — SECOND OCCURRENCE of the concurrency defect; started at 02:29:44Z holding the 01:30:00Z window, wrote at 03:57Z behind the 0330 run",
       "receipt_doc_id": "1Hmk1MHaLC88sdLmj9-womeCHiPMr1fzFterGalhtzNA",
-      "receipt_title": "CARD RELAY-20260802-0229 · Relay watch receipt",
-      "receipt_location": "My Drive root (this run followed the ORIGINAL standing order, which names root; the 0330 run applied the newer DRIVE RULE and filed in the exchange folder. The two receipts are therefore in different places as well as duplicative.)",
-      "duplicate_of": "1HV6tC9swucikCWf0ES2wQN1yAudXKGJmvqeSqlqgTvE (RELAY-20260802-0330)",
-      "detail": "[DIRECT-SYSTEM] Routed HQ-260801-001, CC-260801-011, CC-260801-010 and SPEC-CHG-001 — all four already routed by the 0330 run. Did NOT see STC-260801-002 (created 02:48Z, after this run's scan). Collision detected at write time via the state file's advanced last_scan_utc, exactly as in the 23:30 incident. No second receipt was created: the standing order permits ONE receipt per run and it was already spent.",
-      "duplicate_receipt_disposition": "Doc 1Hmk1MHa... remains in My Drive root. The watcher cannot delete or edit Drive documents. Claude Command or Alan should archive it alongside the earlier duplicate 1be0L_rG... It is now in seen_ids so it will never be routed.",
-      "pointer_decision": "[DECISION] last_scan_utc deliberately NOT advanced past 03:30:10Z. Three material documents created at 03:32-03:33Z are unrouted; advancing would have buried them. Cost of this choice: the next run re-reads the 0330 receipt and the two folders, all of which are in seen_ids and will be ignored.",
-      "unrouted_backlog_for_next_run": [
-        "16AbwfAy7JLAazQ0gLAvNsgc90PL1VqO0qu_pzKsNbWs · ACTIVE COMMAND CARD [IMAC-SCINTILLA-260801-001] — Promote 'Scintilla Livestock Trading Workflow' and Resume Market Readiness · created 03:32:36Z · ORDER · lanes rotation + live engine + relay · NOT YET READ by any run",
-        "1EDhtfkTKxJ8zzKazu1guVCn2n5DMzxjjP14JX3fjBYY · INCIDENT UPDATE [TVMCP-260801-003] — MacBook Safe Validation Failed; Repair Did Not Propagate · created 03:33:11Z · INCIDENT · lane TradingView · READ by the 0229 run, summarised below, but not carried into any receipt",
-        "1d8LHJqNTAWC6snpeCsbMk6macRPYBYBuCLo0fmcIMLk · TECHNICAL DECISION [DB-260801-001] — Single-Writer Enforcement and Staged RLS Remediation · created 03:33:17Z · ORDER/DECISION · lanes calculation validation + live engine · NOT YET READ by any run"
+      "duplicate_of": "1HV6tC9swucikCWf0ES2wQN1yAudXKGJmvqeSqlqgTvE",
+      "pointer_decision": "Held last_scan_utc at 03:30:10Z so three unrouted 03:32-03:33Z cards would not be buried. RESOLVED by the 0556 run — all three routed.",
+      "defect_escalated": "Mitigation still NOT APPLIED and owned by Claude Command: (a) a run-lock field carrying run id + start time, (b) abort at write time if last_scan_utc has advanced past the run's own window start. Also check whether the scheduled task is firing more than once per hour."
+    },
+    {
+      "run_utc": "2026-08-02T05:56:35Z",
+      "window_from": "2026-08-02T03:30:10Z",
+      "candidates_returned": 11,
+      "routed": 9,
+      "ignored": 2,
+      "receipt_doc_id": "15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg",
+      "receipt_title": "CARD RELAY-20260802-0556 · Relay watch receipt",
+      "receipt_location": "My Drive root, per the standing watcher order. [OPEN] The newer operator DRIVE RULE names the exchange folder; the conflict is unresolved and owned by Claude Command.",
+      "backlog_cleared": true,
+      "routed_items": [
+        "16AbwfAy... · ACTIVE COMMAND CARD [IMAC-SCINTILLA-260801-001] · ORDER · rotation + live engine + TradingView + relay (was backlog)",
+        "1EDhtfkT... · INCIDENT UPDATE [TVMCP-260801-003] · INCIDENT · TradingView (was backlog)",
+        "1d8LHJqN... · TECHNICAL DECISION [DB-260801-001] · ORDER/DECISION · calculation validation + live engine (was backlog)",
+        "11XBeeZO... · SPEC-DB-001 · OBSERVATION (staged package, NOT APPLIED)",
+        "17Ioza9f... · CARD CODEX-TV-260802-001 · SITREP · TradingView",
+        "14RVjWLf... · RETURN REVIEW [TVMCP-260801-002-R1] · INCIDENT/REVIEW REJECTION · TradingView",
+        "178ZFawe... · CARD CC-260802-001 · SITREP · TradingView + relay",
+        "131dZgmT... · CARD CC-260802-002 · SITREP · relay + cost/PRs + allocation",
+        "1KvrzFPO... · LIVE WORK REGISTER v2 · OBSERVATION · all lanes"
       ],
-      "incident_read_but_not_receipted": "[DIRECT-SYSTEM, quoted from TVMCP-260801-003] FROM AIOS HQ / Codex TO Claude Command + the MacBook TradingView MCP original builder. STATUS: QUARANTINED — repair required. CHANGES MADE: NONE. A read-only chart-state request failed after five CDP connection attempts; the quarantined launcher was NOT invoked. TradingView Desktop is running on the MacBook but nothing is listening on CDP port 9222 — the process was not started with a visible remote-debugging-port argument. Multiple tradingview-mcp server.js processes are present across clients; none stopped or altered. CONCLUSION: the reported iMac repair has NOT propagated to the MacBook; that implementation is not validation-grade and remains quarantined. State matches RUNNING_WITHOUT_CDP but the tool returned a generic CDP failure rather than the required structured state, so the acceptance requirement is NOT met. OWNER ACTION: the MacBook original builder reconciles its source with the iMac repair return, preserves exact process ownership, makes health/discovery observational, returns RUNNING_WITHOUT_CDP without restart, eliminates destructive launch defaults, and passes the eight established tests in a disposable/mocked environment before ONE supervised device test. Explicitly forbidden from that card: launch, restart, kill, broad process cleanup, altering login items, injecting Pine, or touching the live TradingView profile. RETURN TITLE: 'RETURN [TVMCP-260801-003] — MacBook Repair, Eight-Test Evidence, Versioning, and Rollback'.",
-      "defect_escalated": "CONCURRENCY, second occurrence in six hours, same root cause and same failure mode. Read-then-write on this file is not atomic and nothing prevents a slow run from writing behind a fast one. Two duplicate receipt Docs now exist. Mitigation is specified but still NOT APPLIED and does not belong to the watcher: (a) a run-lock field carrying run id + start time, and (b) an abort at write time if last_scan_utc has advanced past the run's own window start. Owner: Claude Command. Contributing factor worth checking: the scheduled task appears to be firing more than once per hour, or firings are overlapping — the 02:30 firing produced no write while a 02:29 run and a 03:30 run both did.",
-      "prohibitions_observed": "No TradingView MCP tool called of any kind — TVMCP-260801-001 quarantine honoured even while reading an incident about TradingView. No Supabase read or write. No deploy. No merge, no push to any repo other than this state file. No Drive edit or deletion. No credential, key, token or secret value read, printed or logged — referred to by name only.",
+      "ignored_items": [
+        "1HV6tC9s... (own 0330 receipt)",
+        "1Hmk1MHa... (duplicate 0229 receipt)"
+      ],
+      "most_urgent": "[DIRECT-SYSTEM] Codex byte-inspection (CODEX-TV-260802-001) confirms the MacBook TradingView MCP source still carries the destructive default kill_existing-when-omitted plus pattern-based TradingView termination in four scripts, and its connection.js matches neither iMac HEAD nor the claimed repair, in a directory that is not a git repo. Concurrently RETURN REVIEW TVMCP-260801-002-R1 finds every implementation artifact missing from the iMac repair package, so nothing can be verified, ported or rolled back. Both devices quarantined; TVMCP-260801-001 open. Unblocker: one complete archive TVMCP-260801-002_iMAC_REPAIR_PACKAGE_v2_COMPLETE.zip into SCINTILLA–Urth Transfer — Deliverables.",
+      "prohibitions_observed": "No TradingView MCP tool called of any kind — quarantine honoured while reading three TradingView documents. No Supabase read or write. No deploy. No merge, no push to any repo other than this state file. No Drive edit or deletion. No credential, key, token or secret value read, printed or logged — referred to by name only.",
       "writes": [
-        "Google Doc 1Hmk1MHaLC88sdLmj9-womeCHiPMr1fzFterGalhtzNA (duplicate receipt)",
+        "Google Doc 15FO5-DMMEZNzg6gF7jOBF94wN1LM6AlpgIJSaHFLNBg (receipt)",
         "relay/watch-state.json (this file)"
       ]
     }
   ],
-  "_open_rule_gap": "Three gaps, all owned by Claude Command. (1) The title-prefix watch rule misses material documents that carry no watched prefix — DECISION CARD [HQ-...], SPEC-CHG-001, TECHNICAL DECISION [DB-...], the Live Work Register. Recommended replacement: watch ANY document inside AIOS — Command Exchange (1Czqg6O_...) plus the prefix list elsewhere. (2) CONCURRENCY, now twice-realised: overlapping runs hold stale windows and duplicate work; needs a run-lock or a stale-window abort, plus a check of the scheduled task's actual firing pattern. (3) Receipt location is ambiguous — the original standing order says My Drive root, the newer DRIVE RULE says the exchange folder; the two runs on 2026-08-02 filed in different places. Housekeeping outstanding: duplicate receipt Docs 1be0L_rG... and 1Hmk1MHa... should be archived by Claude Command or Alan; the watcher may not edit or delete Drive files. IMMEDIATE: three material cards (IMAC-SCINTILLA-260801-001, TVMCP-260801-003, DB-260801-001) are unrouted and deliberately left out of seen_ids for the next run.",
+  "_open_rule_gap": "Three gaps, all owned by Claude Command. (1) The title-prefix watch rule misses material documents carrying no watched prefix — DECISION CARD, SPEC-*, TECHNICAL DECISION, RETURN REVIEW, LIVE WORK REGISTER. The 0556 run again had to route by folder and content rather than prefix. Recommended replacement: watch ANY document inside AIOS — Command Exchange (1Czqg6O_...) plus the prefix list elsewhere. (2) CONCURRENCY, twice-realised, mitigation still not applied; also verify the scheduled task's actual firing pattern. (3) Receipt location ambiguous — standing order says My Drive root, newer DRIVE RULE says the exchange folder. Housekeeping outstanding: duplicate receipt Docs 1be0L_rG... and 1Hmk1MHa... should be archived by Claude Command or Alan, and LIVE WORK REGISTER v1 (16Y3pPl9...) is superseded by v2; the watcher may not edit or delete Drive files. Backlog: NONE — cleared at 0556Z.",
   "_prohibitions": [
     "No TradingView MCP calls of any kind — TVMCP-260801-001 is open and the tooling is quarantined.",
     "No Supabase writes, no deployments, no merges, no pushes to other repos, no Drive edits or deletions.",
