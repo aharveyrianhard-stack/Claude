@@ -3,7 +3,7 @@
   "_owner": "Claude Command",
   "_scheduled_task": "SCINTILLA Relay Watch — Drive card ingest (hourly at :29 UTC)",
   "_created_utc": "2026-08-01T21:29:00Z",
-  "last_scan_utc": "2026-08-01T22:30:04Z",
+  "last_scan_utc": "2026-08-02T00:30:00Z",
   "seen_ids": [
     "11ZG0GpzjHidYADy0l74q-qZ4gONDf9ORMbpRQIxmyZA",
     "1O9I5p-AJ8sXHmHl2mLF5PPiV3VcNvIdn477LCLJ2VQo",
@@ -22,9 +22,13 @@
     "1eB6UpRse2XreYzEFDDjlSHiTb8cuGPNHiqyjt0iskBM",
     "1uvFH5CqzCJl-8crVn8mo0CetJn1RbMAoyOEI7lENi5M",
     "1o5Fqef-C8MAGkP7-O9zY7DR52-YT-fECNIFHcOXzCEE",
-    "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU"
+    "1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU",
+    "1HrQeZ3YsWhwNaqZz2RoXzl2FIcVhkeagm2W9wHkVCHQ",
+    "1m4OjCrmK7E1VuO9JC9dXH57hfRreoKoCTsDBi9bswrY",
+    "191hAsq89tBZOt6aXiDm5uzECjzlgRT0ftheZXj69L7c",
+    "1Czqg6O_HDhwY79wRKGyv1qZgYh0bn9Rd"
   ],
-  "_seen_ids_note": "First 12 = authority and order documents ingested by Claude Command before the watcher went live. Entries 13-15 = cards CC-260801-009 / -008 / -007, routed in receipt RELAY-20260801-2230. Entry 16 = Live Work Register (material but no watched title prefix; recorded so it does not resurface). Entry 17 = a non-command personal document, ignored. Entry 18 = this watcher's own receipt Doc, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries.",
+  "_seen_ids_note": "First 12 = authority and order documents ingested by Claude Command before the watcher went live. Entries 13-15 = cards CC-260801-009 / -008 / -007, routed in receipt RELAY-20260801-2230. Entry 16 = Live Work Register (material but no watched title prefix; recorded so it does not resurface). Entry 17 = a non-command personal document, ignored. Entry 18 = the 2230 receipt Doc, recorded so the watcher never routes its own output. Entries 19-21 = non-command personal documents seen in the 0030 run, ignored. Entry 22 = folder 'AIOS — Command Exchange', created 2026-08-01T23:35Z and EMPTY at 0030 scan; recorded so the empty folder does not resurface, but its CONTENTS are still watched via the normal modifiedTime sweep. Cap the list at the 500 most recent entries.",
   "_run_log": [
     {
       "run_utc": "2026-08-01T22:30:04Z",
@@ -40,9 +44,30 @@
         "Google Doc 1Vj5GkEpgLEKOg-dQoN1BQBY1x0Hc5ZivE067XG3B0BU (receipt)",
         "relay/watch-state.json (this file)"
       ]
+    },
+    {
+      "run_utc": "2026-08-02T00:30:00Z",
+      "window_from": "2026-08-01T22:30:04Z",
+      "candidates_returned": 6,
+      "routed": 0,
+      "ignored": 6,
+      "receipt_doc_id": null,
+      "receipt_title": null,
+      "no_receipt_reason": "Zero new material command documents in window. Standing rule: create no empty receipt.",
+      "detail": "[DIRECT-SYSTEM] 6 Drive items modified since 22:30:04Z. 2 already in seen_ids (the 2230 receipt; 'JAIME GOLDSTEIN'). 3 new personal/non-command docs with no watched title prefix: 'MOMS BIG NOTE', 'Dirty notes for later', 'PRINT FOR OTHER STUDENTS'. 1 new folder 'AIOS — Command Exchange' (1Czqg6O_HDhwY79wRKGyv1qZgYh0bn9Rd), created 23:35Z, verified EMPTY by parentId query at scan time.",
+      "observation": "[INFERRED] The new empty folder 'AIOS — Command Exchange' reads like a staging area being prepared for command traffic. If Claude Command intends it as the relay drop point, that is a routing-rule change the watcher does not own. Next run should re-check it for contents.",
+      "most_urgent": "Unchanged from prior run — W-002 chg_pct reference-close ruling still open and still blocking the P0.1 production fix. No new item outranks it.",
+      "open_items_carried": [
+        "_open_rule_gap below: Live Work Register has no watched prefix.",
+        "New: 'AIOS — Command Exchange' folder has no watch rule."
+      ],
+      "prohibitions_observed": "No TradingView tool called. No Supabase read or write, no deploy, no merge, no push to any other repo, no Drive create/edit/delete. No credential value read or printed.",
+      "writes": [
+        "relay/watch-state.json (this file) — the run's only write"
+      ]
     }
   ],
-  "_open_rule_gap": "The Live Work Register (1uvFH5Cq...) is material but its title matches none of the watched prefixes (ACTIVE, CARD, HQ RETURN, DIRECTIVE, RELAY, SPRINT, INCIDENT, STAGED, SITREP). If it should be watched for changes it needs a watched prefix or an explicit rule. Flagged in receipt RELAY-20260801-2230; decision belongs to Claude Command.",
+  "_open_rule_gap": "The Live Work Register (1uvFH5Cq...) is material but its title matches none of the watched prefixes (ACTIVE, CARD, HQ RETURN, DIRECTIVE, RELAY, SPRINT, INCIDENT, STAGED, SITREP). If it should be watched for changes it needs a watched prefix or an explicit rule. Second gap opened 2026-08-02: folder 'AIOS — Command Exchange' likewise has no rule. Both decisions belong to Claude Command.",
   "_prohibitions": [
     "No TradingView MCP calls of any kind — TVMCP-260801-001 is open and the tooling is quarantined.",
     "No Supabase writes, no deployments, no merges, no pushes to other repos, no Drive edits or deletions.",
