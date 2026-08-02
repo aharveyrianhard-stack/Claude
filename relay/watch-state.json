@@ -3,8 +3,8 @@
   "_owner": "Claude Command",
   "_scheduled_task": "SCINTILLA Relay Watch — Drive card ingest (hourly at :29 UTC)",
   "_created_utc": "2026-08-01T21:29:00Z",
-  "last_scan_utc": "2026-08-02T00:30:00Z",
-  "_last_scan_note": "Deliberately NOT rolled back. A later run (23:30Z wall-clock, but reading the 21:29Z state) wrote after the 00:30Z run; moving this pointer backwards would cause every card since 22:30Z to be re-routed. The newest value wins.",
+  "last_scan_utc": "2026-08-02T01:30:00Z",
+  "_last_scan_note": "Monotonic pointer. Never roll this value backwards; a stale window would cause already-routed cards to be routed again (see the 23:30 duplicate incident below). The newest value wins.",
   "seen_ids": [
     "11ZG0GpzjHidYADy0l74q-qZ4gONDf9ORMbpRQIxmyZA",
     "1O9I5p-AJ8sXHmHl2mLF5PPiV3VcNvIdn477LCLJ2VQo",
@@ -30,7 +30,7 @@
     "1Czqg6O_HDhwY79wRKGyv1qZgYh0bn9Rd",
     "1be0L_rGhU_6JSspoh2uBH6CdH7eCCB7hYHiDV_ou23E"
   ],
-  "_seen_ids_note": "First 12 = authority and order documents ingested by Claude Command before the watcher went live. Entries 13-15 = cards CC-260801-009 / -008 / -007, routed in receipt RELAY-20260801-2230. Entry 16 = Live Work Register (material but no watched title prefix; recorded so it does not resurface). Entry 17 = a non-command personal document, ignored. Entry 18 = the 2230 receipt Doc. Entries 19-21 = non-command personal documents seen in the 0030 run, ignored. Entry 22 = folder 'AIOS — Command Exchange', created 2026-08-01T23:35Z and EMPTY at 0030 scan; its CONTENTS are still watched via the normal modifiedTime sweep. Entry 23 = the DUPLICATE receipt RELAY-20260801-2330, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries.",
+  "_seen_ids_note": "First 12 = authority and order documents ingested by Claude Command before the watcher went live. Entries 13-15 = cards CC-260801-009 / -008 / -007, routed in receipt RELAY-20260801-2230. Entry 16 = Live Work Register (material but no watched title prefix; recorded so it does not resurface). Entry 17 = a non-command personal document, ignored. Entry 18 = the 2230 receipt Doc. Entries 19-21 = non-command personal documents, ignored. Entry 22 = folder 'AIOS — Command Exchange', created 2026-08-01T23:35Z; re-verified EMPTY at the 0130 scan. Entry 23 = the DUPLICATE receipt RELAY-20260801-2330, recorded so the watcher never routes its own output. Cap the list at the 500 most recent entries. No new IDs added by the 0130 run.",
   "_run_log": [
     {
       "run_utc": "2026-08-01T22:30:04Z",
@@ -85,9 +85,26 @@
         "Google Doc 1be0L_rGhU_6JSspoh2uBH6CdH7eCCB7hYHiDV_ou23E (duplicate receipt)",
         "relay/watch-state.json (this file)"
       ]
+    },
+    {
+      "run_utc": "2026-08-02T01:30:00Z",
+      "window_from": "2026-08-02T00:30:00Z",
+      "candidates_returned": 1,
+      "routed": 0,
+      "ignored": 1,
+      "receipt_doc_id": null,
+      "receipt_title": null,
+      "no_receipt_reason": "Zero new material command documents in window. Standing rule: create no empty receipt.",
+      "detail": "[DIRECT-SYSTEM] Exactly 1 Drive item modified since 00:30:00Z: the duplicate receipt Doc 'CARD RELAY-20260801-2330' (1be0L_rG..., modified 01:02:00Z) — already in seen_ids, and the watcher's own output, so not routed. Folder 'AIOS — Command Exchange' (1Czqg6O_...) re-checked by parentId query and is STILL EMPTY. No new material command documents.",
+      "observation": "[INFERRED] Quiet hour. Nothing new has entered the relay since the 22:30 batch; the only Drive activity in the window was the duplicate receipt's own metadata timestamp. The command-side gates below are what the queue is actually waiting on, not a lack of watcher coverage.",
+      "most_urgent": "Unchanged for the third consecutive run — W-002 chg_pct reference-close ruling (last official daily close vs last regular-session close) is still open and still blocks the P0.1 production fix. Also still open and owned by Alan: W-021 PR#1 merge-and-rotate, W-022 dispose _secrets/VERCEL_TOKEN.txt, W-023 route the FMP key to the loop, plus the two TradingView repair-packet pastes under incident TVMCP-260801-001.",
+      "prohibitions_observed": "No TradingView tool called. No Supabase read or write, no deploy, no merge, no push to any other repo, no Drive create/edit/delete. No credential value read or printed.",
+      "writes": [
+        "relay/watch-state.json (this file) — the run's only write"
+      ]
     }
   ],
-  "_open_rule_gap": "Three gaps, all owned by Claude Command, none resolved by the watcher. (1) The Live Work Register (1uvFH5Cq...) is material but its title matches none of the watched prefixes (ACTIVE, CARD, HQ RETURN, DIRECTIVE, RELAY, SPRINT, INCIDENT, STAGED, SITREP). (2) Folder 'AIOS — Command Exchange' has no watch rule. (3) NEW 2026-08-02: overlapping runs can hold stale windows and duplicate work — the watcher needs a run-lock or a stale-window abort.",
+  "_open_rule_gap": "Three gaps, all owned by Claude Command, none resolved by the watcher. (1) The Live Work Register (1uvFH5Cq...) is material but its title matches none of the watched prefixes (ACTIVE, CARD, HQ RETURN, DIRECTIVE, RELAY, SPRINT, INCIDENT, STAGED, SITREP). (2) Folder 'AIOS — Command Exchange' has no watch rule and remains empty as of 2026-08-02T01:30Z. (3) Overlapping runs can hold stale windows and duplicate work — the watcher needs a run-lock or a stale-window abort. Housekeeping still outstanding: the duplicate receipt Doc 1be0L_rG... should be archived by Claude Command or Alan; the watcher may not edit or delete Drive files.",
   "_prohibitions": [
     "No TradingView MCP calls of any kind — TVMCP-260801-001 is open and the tooling is quarantined.",
     "No Supabase writes, no deployments, no merges, no pushes to other repos, no Drive edits or deletions.",
